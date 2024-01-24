@@ -9,143 +9,143 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NutriSoftwareV1
 build_property.RootNamespace = NutriSoftwareV1
-build_property.ProjectDir = D:\programacao\Projetos\NET7\NutriSoftwareV1\
+build_property.ProjectDir = D:\programacao\Projetos\NET7\NutriSoftwareV1\NutriSoftwareV1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\programacao\Projetos\NET7\NutriSoftwareV1
+build_property.MSBuildProjectDirectory = D:\programacao\Projetos\NET7\NutriSoftwareV1\NutriSoftwareV1
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Anminese/Index.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Anminese/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5taW5lc2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Anminese/Partiais/_DadosAnminese.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Anminese/Partiais/_DadosAnminese.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5taW5lc2VcUGFydGlhaXNcX0RhZG9zQW5taW5lc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Anminese/Partiais/_FormularioAnminese.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Anminese/Partiais/_FormularioAnminese.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5taW5lc2VcUGFydGlhaXNcX0Zvcm11bGFyaW9Bbm1pbmVzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Anminese/Partiais/_GeralAnminese.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Anminese/Partiais/_GeralAnminese.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5taW5lc2VcUGFydGlhaXNcX0dlcmFsQW5taW5lc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/AvaliacaoBioImpedancia/Index.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/AvaliacaoBioImpedancia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY2FvQmlvSW1wZWRhbmNpYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/AvaliacaoBioImpedancia/Partiais/_FormularioAvaliacaoBioImpedancia.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/AvaliacaoBioImpedancia/Partiais/_FormularioAvaliacaoBioImpedancia.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY2FvQmlvSW1wZWRhbmNpYVxQYXJ0aWFpc1xfRm9ybXVsYXJpb0F2YWxpYWNhb0Jpb0ltcGVkYW5jaWEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/AvaliacaoBioImpedancia/Partiais/_ListaAvaliacoesBioImpedancia.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/AvaliacaoBioImpedancia/Partiais/_ListaAvaliacoesBioImpedancia.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY2FvQmlvSW1wZWRhbmNpYVxQYXJ0aWFpc1xfTGlzdGFBdmFsaWFjb2VzQmlvSW1wZWRhbmNpYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Avaliacao/Index.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Avaliacao/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY2FvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Avaliacao/Partiais/_FormularioAvaliacao.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Avaliacao/Partiais/_FormularioAvaliacao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY2FvXFBhcnRpYWlzXF9Gb3JtdWxhcmlvQXZhbGlhY2FvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Avaliacao/Partiais/_ListaAvaliacoes.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Avaliacao/Partiais/_ListaAvaliacoes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhbGlhY2FvXFBhcnRpYWlzXF9MaXN0YUF2YWxpYWNvZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Consumos/Index.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Consumos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3Vtb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Consumos/Partiais/_DadosConsumoAlimentar.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Consumos/Partiais/_DadosConsumoAlimentar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3Vtb3NcUGFydGlhaXNcX0RhZG9zQ29uc3Vtb0FsaW1lbnRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Consumos/Partiais/_FormularioConsumos.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Consumos/Partiais/_FormularioConsumos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3Vtb3NcUGFydGlhaXNcX0Zvcm11bGFyaW9Db25zdW1vcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Consumos/Partiais/_GeralConsumos.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Consumos/Partiais/_GeralConsumos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3Vtb3NcUGFydGlhaXNcX0dlcmFsQ29uc3Vtb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Home/Index.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Home/Privacy.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Paciente/Create.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Paciente/Edit.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Paciente/Index.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Paciente/Partiais/_AnotacoesPaciente.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Partiais/_AnotacoesPaciente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcUGFydGlhaXNcX0Fub3RhY29lc1BhY2llbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Paciente/Partiais/_DetalhesPaciente.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Partiais/_DetalhesPaciente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcUGFydGlhaXNcX0RldGFsaGVzUGFjaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Paciente/Partiais/_FormularioEditarAnotacaoPaciente.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Partiais/_FormularioEditarAnotacaoPaciente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcUGFydGlhaXNcX0Zvcm11bGFyaW9FZGl0YXJBbm90YWNhb1BhY2llbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Paciente/Partiais/_GeralPaciente.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Partiais/_GeralPaciente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcUGFydGlhaXNcX0dlcmFsUGFjaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Shared/Error.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Shared/_AnmineseScriptPartial.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Shared/_AnmineseScriptPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Bbm1pbmVzZVNjcmlwdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Shared/_AvaliacaoBioImpedanciaScriptsPartial.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Shared/_AvaliacaoBioImpedanciaScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdmFsaWFjYW9CaW9JbXBlZGFuY2lhU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Shared/_AvaliacaoScriptsPartial.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Shared/_AvaliacaoScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdmFsaWFjYW9TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Shared/_ConsumosScriptPartial.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Shared/_ConsumosScriptPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db25zdW1vc1NjcmlwdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Shared/_PacientesScriptPartial.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Shared/_PacientesScriptPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWNpZW50ZXNTY3JpcHRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/_ViewImports.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/_ViewStart.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/Views/Shared/_Layout.cshtml]
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xkgkezo2cf
