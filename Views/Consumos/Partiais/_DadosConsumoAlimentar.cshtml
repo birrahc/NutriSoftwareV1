@@ -1,0 +1,132 @@
+﻿@model ConsumoAlimentar
+@if (Model != null)
+{
+    <div class="col-12 bg-secondary p-1 bdr-5"><h5 class="text-center text-light p-0 m-0">Paciente: <b>@Model.Paciente.Nome</b></h5></div>
+    <div class="col-12 p-0">
+        <div class="row">
+
+            <div class="col-12 p-0 d-inline-block mt-1">
+                <div class="container-fluid mt-1 pe-0">
+                    
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Água</label>
+                            <input type="text" readonly value="@Model.Agua" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsAgua" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Sucos</label>
+                            <input type="text" readonly value="@Model?.Sucos" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsSucos" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Durante as refeições</label>
+                            <input type="text" readonly value="@Model?.DuranteAsRefeicoes" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsDuranteAsRefeicoes" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Refrigerantes</label>
+                            <input type="text" readonly value="@Model?.Refrigerantes" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsRefrigerantes" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Açucares</label>
+                            <input type="text" readonly value="@Model?.Acucares" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.Acucares" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Sódio</label>
+                            <input type="text" readonly value="@Model?.Sodio" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsSodio" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Cereais</label>
+                            <input type="text" readonly value="@Model?.Cereais" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsCereais" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Frutas</label>
+                            <input type="text" readonly value="@Model?.Frutas" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsFrutas" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Verduras</label>
+                            <input type="text" readonly value="@Model?.Verduras" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.Verduras" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Local de almoço</label>
+                            <input type="text" readonly value="@Model?.LocalAlmoco?.Descricao" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Preferências</label>
+                            <input type="text" readonly value="@Model?.Preferencias" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Aversões</label>
+                            <input type="text" readonly value="@Model?.Aversoes" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+else
+{
+    <p class="text-center">Este paciente não possui registro de consumo alimentar. <a onclick="AbrirFormularioCadastrarEditarConsumos_OnClick('@ViewBag.Id','null')" class="btn btn-link">Cadastrar</a></p>
+}

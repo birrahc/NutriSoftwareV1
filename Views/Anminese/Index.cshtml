@@ -1,0 +1,23 @@
+﻿@using NutriSoftwareV1.Enums
+@model NutriSoftwareV1.Models.Anminese
+@{
+    string isvisible = Model != null ? "block" : "none";
+}
+
+<div class="container-fluid" style="margin-top: 70px;" id="pnlGeralAnminese">
+    <partial name="Partiais/_GeralAnminese" for="@Model"/>
+</div>
+
+<div class="modal fade" id="modalCadastroAnminese" tabindex="-1" aria-labelledby="modalCadastroAnmineseModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="pnlFormularioAnminese">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_AnmineseScriptPartial");
+    }
+}
+

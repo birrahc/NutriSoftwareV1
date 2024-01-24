@@ -1,0 +1,314 @@
+﻿@model NutriSoftwareV1.Dto.DtoCadastroAvaliacaoFisica
+@{
+    var x = Model;
+    var xx = x;
+}
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Model?.TituloCadastarEditar</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<form name="frmCadastrarEditarAvaliacao" class="m-0 p-0">
+    <div class="modal-body">
+
+        <div class="container-fluid">
+            <div class="row">
+                <input type="hidden" name="Id"value="@Model?.CriarAtulizar?.Id"/>
+                <input type="hidden" name="PacienteId" value="@Model?.PacienteId"/>
+
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Consulta" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Avaliação</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="number" name="Consulta" value="@Model.NumeroAvaliacao" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="date" value="@Model?.UltimaAvalicao?.DataAvaliacao.ToString("yyyy-MM-dd")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Data</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="date" name="DataAvaliacao" value="@Model.Data.ToString("yyyy-MM-dd")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Peso.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Peso</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Peso" value="@Model?.CriarAtulizar?.Peso.ToString("N2")" oninput="TextNumericDecimal(this.id,2)" id="txtPeso" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-12 bg-secondary">
+                    <h4 class="h3-indice text-center">Circunferências</h4>
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.C_Cintura?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Cintura</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="C_Cintura" mask=medidas value="@Model?.CriarAtulizar?.C_Cintura?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao.C_Abdominal?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Abdominal</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="C_Abdominal" mask=medidas value="@Model?.CriarAtulizar?.C_Abdominal?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.C_Quadril?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Quadril</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="C_Quadril" mask=medidas value="@Model?.CriarAtulizar?.C_Quadril?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.C_Peito?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Peito</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="C_Peito" mask=medidas value="@Model?.CriarAtulizar?.C_Peito?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.C_Braco_D?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Braço D</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="C_Braco_D" mask=medidas value="@Model?.CriarAtulizar?.C_Braco_D?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.C_Braco_E?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Braço E</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="C_Braco_E" mask=medidas value="@Model?.CriarAtulizar?.C_Braco_E?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.C_Coxa_D?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Coxa D</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="C_Coxa_D" mask=medidas value="@Model?.CriarAtulizar?.C_Coxa_D?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.C_Coxa_E?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Coxa E</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="C_Coxa_E" mask=medidas value="@Model?.CriarAtulizar?.C_Coxa_E?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Panturrilha_D?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Coxa E</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Panturrilha_D" mask=medidas value="@Model?.CriarAtulizar?.Panturrilha_D?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Panturrilha_E?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">C.Coxa E</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Panturrilha_E" mask=medidas value="@Model?.CriarAtulizar?.Panturrilha_E?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-12 bg-secondary">
+                    <h4 class="h3-indice text-center">Dobra cutânea</h4>
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Dc_Triceps?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">DC.Triceps</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Dc_Triceps" mask=medidas value="@Model?.CriarAtulizar?.Dc_Triceps?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Dc_Escapular?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">DC.Escapular</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Dc_Escapular" mask=medidas value="@Model?.CriarAtulizar?.Dc_Escapular?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Dc_Supra_Iliaca?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">DC.Supra Iliaca</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Dc_Supra_Iliaca" mask=medidas value="@Model?.CriarAtulizar?.Dc_Supra_Iliaca?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Dc_Abdominal?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">DC.Abdominal</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Dc_Abdominal" mask=medidas value="@Model?.CriarAtulizar?.Dc_Abdominal?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Dc_Axilar?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">DC.Axilar</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Dc_Axilar" mask=medidas value="@Model?.CriarAtulizar?.Dc_Axilar?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Dc_Peitoral?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">DC.Peitoral</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Dc_Peitoral" mask=medidas value="@Model?.CriarAtulizar?.Dc_Peitoral?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Dc_coxa?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">DC.Coxa</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Dc_coxa" mask=medidas value="@Model?.CriarAtulizar?.Dc_coxa?.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.PercentualGordura?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">% Gordura</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.CriarAtulizar?.PercentualGordura?.ToString("N2")" readonly class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.MassaMuscular?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Kg M.Muscular</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.CriarAtulizar?.MassaMuscular?.ToString("N2")" readonly class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Gordura?.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Kg Gordura</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Gordura" value="@Model?.CriarAtulizar?.Gordura?.ToString("N2")" readonly class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="CadastrarEditarAvaliacao_OnClick()" class="btn btn-primary">Salvar</button>
+    </div>
+
+
+</form>

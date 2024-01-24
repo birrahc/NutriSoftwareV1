@@ -1,0 +1,31 @@
+﻿@model ConsumoAlimentar
+<div class="row">
+    <div class="col-11 bcAzulMar bdr-20 pt-2 pb-2 bds-1">
+        <div class="container-fluid">
+            <div class="row" id="pnlConsumoPaciente">
+                <partial name="Partiais/_DadosConsumoAlimentar" for="@Model" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-1 bcAzulMar" style="border-radius: 20px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="float-left" style="padding-bottom: 25px;">
+                    <nav class="mt-5">
+                        <ul class="m-0 p-0">
+                            <li class="d-flex mt-5"><a href="@Url.Action("Index","Paciente", new {Id=ViewBag.Id})"><img src="~/icons-main/icons/person-badge.svg" alt="Dados Paciente" width="25" height="25" title="Dados Paciente"></a></li>
+                            <li class="d-flex mt-5"><a href="@Url.Action("Index","Anminese", new{Id=ViewBag.Id})"><img src="~/icons-main/icons/clipboard.svg" alt="Anminese" width="25" height="25" title="Anminese"></a></li>
+                            <li class="d-flex mt-5"><a href="@Url.Action("Index","Avaliacao",new{Id=ViewBag.Id})"><img src="~/icons-main/icons/table.svg" alt="Avaliações" width="25" height="25" title="Avaliações"></a></li>
+                            <li class='d-flex mt-5'><a href="@Url.Action("Index","AvaliacaoBioImpedancia", new{Id=ViewBag.Id})"><img src='~/icons-main/icons/tablet-landscape.svg' alt='Bioimpedância' width='25' height='25' title='BioImpedância'></a></li>
+                            @if (Model != null)
+                            {
+                                <li class="d-flex mt-5"><a onclick="AbrirFormularioCadastrarEditarConsumos_OnClick('@Model.PacienteId','@Model.Id')"><img src="~/icons-main/icons/pencil-square.svg" alt="Editar" width="25" height="25" title="Editar"></a></li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

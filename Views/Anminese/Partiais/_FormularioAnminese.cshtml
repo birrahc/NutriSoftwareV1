@@ -1,0 +1,152 @@
+﻿@using NutriSoftwareV1.Enums
+@model Anminese
+
+<form name="frmCadastrarEditarAnminese" method="post" class="p-0 m-0">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">@ViewBag.Titulo</h5>
+    </div>
+
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <label>Objetivo</label>
+                    <input type="hidden" asp-for="PacienteId" value="@ViewBag.PacienteId" />
+                    <input type="hidden" asp-for="Id" value="@Model?.Id"/>
+                    <input type="text" asp-for="Objetivo" class="form-control form-control-sm w-100" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Diagnóstico médico</label>
+                    <select asp-for="DiagnosticoMedicoId" asp-items="@ViewBag.DiagnosticoMedico" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsDiagnosticoMedico" class="form-control form-control-sm" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Exames</label>
+                    <select asp-for="Exames" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsExames" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Medicamentos</label>
+                    <select asp-for="Medicamentos" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsMedicamentos" class="form-control form-control-sm" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Suplementos</label>
+                    <select asp-for="Suplementos" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsSuplementos" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Histórico familiar</label>
+                    <select asp-for="HistoricoFamiliarId" asp-items="@ViewBag.HistoricoFamiliar" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsHistoricoFamiliar" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Sinais e sintomas</label>
+                    <select asp-for="SinaisESintomas" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="Obs_Sinais_Sintomas" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Hábitos intestinais</label>
+                    <select asp-for="HabitosIntestinais" asp-items="Html.GetEnumSelectList<EN_HabitosIntestinais>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="Obs_Hab_Intestinal" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Tabagismo</label>
+                    <select asp-for="Tabagismo" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="Obs_Tabagismo" class="form-control form-control-sm" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Etilismo</label>
+                    <select asp-for="Etilismo" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="Obs_Etilismo" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Atividades Físicas</label>
+                    <select asp-for="AtividadesFisciaId" asp-items="ViewBag.AtividadesFisicas" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsAtividadesFisicas" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="CadastrarEditarAvaliacao_OnClick()" class="btn btn-primary">Save changes</button>
+    </div>
+</form>

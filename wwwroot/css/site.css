@@ -1,0 +1,445 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.list-stile-None {
+    list-style: none;
+}
+
+.height-500 {
+    height: 500px;
+}
+
+.bdr-20 {
+    border-radius: 20px;
+}
+
+.bds-1 {
+    border: solid 1px #138496;
+}
+
+.bd-top-bottom-left {
+    border-top: solid 1px #138496;
+    border-bottom: solid 1px #138496;
+    border-left: solid 1px #138496;
+}
+
+.ftsinze-18 {
+    font-size: 18px;
+}
+
+.bcAzulMar {
+    background-color: #CEF6EC;
+}
+
+.height-390 {
+    height: 390px;
+}
+
+.fs-10 {
+    font-size: 10px;
+}
+
+.border-0 {
+    border: 0;
+}
+
+.border-bottom-1 {
+    border-bottom: solid 1px #333 !important;
+}
+
+.w-45 {
+    width: 45% !important;
+}
+
+.ml-39 {
+    margin-left: 39px;
+}
+
+.w-70 {
+    width: 70% !important;
+}
+
+.w-20 {
+    width: 20% !important;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.height-80 {
+    height: 80%;
+}
+
+.errorValidate {
+    font-size: 10px;
+    color: red;
+    margin-left: 2px;
+}
+
+.mgtp {
+    margin-top: -7px !important;
+}
+
+.fs-13 {
+    font-size: 13px !important;
+}
+
+.mgtp--15 {
+    margin-top: -15px !important;
+}
+
+.height-23 {
+    height: 23px;
+}
+
+.fs-15 {
+    font-size: 15px !important;
+}
+
+.float-left {
+    float: left;
+}
+
+.w30pec {
+    width: 30%;
+    margin: 10px 1.666666666666667%;
+}
+
+.w-50px {
+    width: 50px !important;
+}
+
+.bloco-avaliacao {
+    width: 12%;
+    height: 100%;
+    float: left;
+}
+
+    .bloco-avaliacao .indice-avaliacao {
+        margin-top: 1px;
+        border-radius: 5px;
+    }
+
+        .bloco-avaliacao .indice-avaliacao h4 {
+            font-family: Arial;
+            font-size: 13px;
+            color: whitesmoke;
+            padding: 3.3px 8px;
+            margin: 0;
+        }
+
+.display-dados-aval {
+    width: 85%;
+    height: 96%;
+    float: left;
+    overflow: auto;
+    margin-left: 1px;
+}
+
+
+.dados-aval {
+    width: 80px;
+    background-color: whitesmoke;
+    float: left;
+    margin-top: 1px;
+    margin-left: 1px;
+    border-radius: 5px;
+}
+
+    .dados-aval p {
+        font-family: Arial;
+        font-size: 13px !important;
+        text-align: center;
+        padding: 1.3px 8px;
+        margin: 0;
+    }
+
+.tit-circ-dc {
+    margin-top: 1px;
+    background-color: #6c757d;
+}
+
+    .tit-circ-dc h4 {
+        text-align: center;
+    }
+
+.p-1px {
+    padding: 1px;
+}
+
+.ptb2px {
+    padding: 2px 0 !important;
+}
+
+.menus-aval {
+    margin: 42px 0;
+}
+
+    .menus-aval nav {
+        display: block;
+        opacity: 0
+    }
+
+        .menus-aval nav:hover {
+            opacity: 1;
+        }
+
+.w-78 {
+    width: 78% !important;
+}
+
+.input-aval {
+    float: left;
+    height: 100%;
+    width: 109px;
+}
+
+    .input-aval input {
+        width: 110px;
+        height: 22px;
+        font-size: 12px;
+        border: 0;
+        text-align: center;
+        background: none;
+        border-bottom: solid 2px #6c757d;
+        outline: none;
+    }
+
+input {
+    outline: none
+}
+
+.input-aval input [type="text"] {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.input-aval button {
+    background-color: whitesmoke;
+    height: 30px;
+    margin: 1px 3px;
+    width: 108px;
+    border-radius: 5px;
+}
+
+    .input-aval button:hover {
+        background-color: #66CDAA;
+    }
+
+.delete-aval {
+    opacity: 0;
+    border: none;
+    background: none;
+}
+
+    .delete-aval:hover {
+        opacity: 1;
+    }
+
+.w-blocobio {
+    width: 15% !important;
+}
+
+    .w-blocobio .indice-avaliacao {
+        height: 55px;
+        border-radius: 5px;
+    }
+
+        .w-blocobio .indice-avaliacao h4 {
+            padding: 22.3px 8px !important;
+            font-size: 15px;
+        }
+
+.w-display-dadosBio {
+    width: 82% !important;
+}
+
+    .w-display-dadosBio .bio-cont {
+        margin-top: 1px !important;
+        width: 100px;
+        height: 55px;
+        float: left;
+        margin-left: 1px;
+        border-radius: 5px;
+        background-color: whitesmoke
+    }
+
+        .w-display-dadosBio .bio-cont p {
+            text-align: center;
+            padding: 22.3px 0 !important;
+        }
+
+.w-75 {
+    width: 75% !important;
+}
+
+.bloco-bio-cad {
+    width: 15% !important;
+}
+
+    .bloco-bio-cad .indice-avaliacao {
+        height: 55px;
+        border-radius: 5px;
+    }
+
+        .bloco-bio-cad .indice-avaliacao h4 {
+            padding: 22.3px 8px !important;
+            font-size: 15px;
+        }
+
+    .bloco-bio-cad button {
+        width: 73%;
+        border-radius: 5px;
+        margin: 4px 4px;
+        height: 40px;
+    }
+
+        .bloco-bio-cad button:hover {
+            background-color: #66CDAA;
+        }
+
+.tableBiocad .bio-cont {
+    height: 55px !important;
+}
+
+.mt-mb-30 {
+    margin: 30px 0 !important;
+}
+
+
+
+.bdr-5 {
+    border-radius: 5px;
+}
+
+.circ {
+    border: solid 1px #6c757d;
+    border-top: none;
+    padding: 5px;
+    background-color: #f8f9fa;
+}
+
+.h-tit {
+    text-align: center;
+    padding: 0;
+    position: relative;
+    top: 6px;
+}
+
+.bg-none {
+    background: none !important;
+}
+
+.conteudoCad {
+    width: 100%;
+    margin: auto;
+}
+
+.selectores {
+    float: left;
+    width: 40%;
+    margin: 0 1%;
+}
+
+    .selectores select {
+        width: 100%;
+        padding: 2px;
+        border-radius: 5px;
+        border: none;
+    }
+
+.obsCad {
+    float: left;
+    width: 56%;
+    margin: 0 1%;
+}
+
+    .obsCad input[type=text] {
+        width: 80%;
+        border-radius: 5px;
+        border: none;
+    }
+
+.bdr-10 {
+    border-radius: 10px;
+}
+
+.w-49 {
+    width: 49%;
+}
+
+.ml2 {
+    margin-left: 2%;
+}
+
+.ml-mr-25 {
+    margin: 0 2.5% !important;
+}
+
+.img-login {
+    width: 30%;
+    margin: auto;
+}
+
+    .img-login img {
+        width: 100%;
+    }
+
+.banner-login {
+    width: 100%;
+}
+
+    .banner-login img {
+        width: 100%;
+    }
+
+    .banner-login p {
+        text-align: center;
+    }
+
+.input-avaliacao {
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+.h3-indice {
+    font-size: 13px;
+    color: whitesmoke;
+    padding: 3.3px 8px;
+    margin: 0;
+    margin-top: 0.25rem;
+}
+
+.borderTopSolidWhite {
+    border-top: solid 1px #fff;
+}
+.borderTopLeftGrey {
+    border-top: solid 1px #a5a5a5 !important;
+    border-left: solid 1px #a5a5a5 !important;
+    
+}
+.fs-17px{
+    font-size:17px;
+}

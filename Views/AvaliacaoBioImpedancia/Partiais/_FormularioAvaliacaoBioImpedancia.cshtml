@@ -1,0 +1,128 @@
+﻿@model NutriSoftwareV1.Dto.DtoCadastroAvaliacaoBioImpedancia
+@{
+    var x = Model;
+    var xx = x;
+}
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">@Model?.TituloCadastarEditar</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<form name="frmCadastrarEditarAvaliacaoBioImpendancia" class="m-0 p-0">
+    <div class="modal-body">
+
+        <div class="container-fluid">
+            <div class="row">
+                <input type="hidden" name="Id"value="@Model?.CriarAtulizar?.Id"/>
+                <input type="hidden" name="PacienteId" value="@Model?.PacienteId"/>
+
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="date" value="@Model?.UltimaAvalicao?.Data.ToString("yyyy-MM-dd")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Data</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="date" name="Data" value="@Model?.Data.ToString("yyyy-MM-dd")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.Peso.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Peso</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="Peso" value="@Model?.CriarAtulizar?.Peso.ToString("N2")" oninput="TextNumericDecimal(this.id,2)" id="txtPeso" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+         
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.IMC.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">IMC</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="IMC" mask=medidas value="@Model?.CriarAtulizar?.IMC.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.PercentualGorduraCorporal.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">% Gordura corporal</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="PercentualGorduraCorporal" mask=medidas value="@Model?.CriarAtulizar?.PercentualGorduraCorporal.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.PercentualMusculoEsqueletico.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">% Músc. Esquelético</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="PercentualMusculoEsqueletico" mask=medidas value="@Model?.CriarAtulizar?.PercentualMusculoEsqueletico.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.MetaBolismoBasal.ToString("N2")" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Metabolismo basal</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="MetaBolismoBasal" mask=medidas value="@Model?.CriarAtulizar?.MetaBolismoBasal.ToString("N2")" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.IdadeCorporal" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Idade corporal</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="IdadeCorporal" mask=medidas value="@Model?.CriarAtulizar?.IdadeCorporal" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <div class="col-4 d-inline-block">
+                    <input type="text" value="@Model?.UltimaAvalicao?.GorduraViceral" tabindex="-1" readonly class="form-control form-control-sm text-center" />
+                </div>
+                <div class="col-4 d-inline-block bg-secondary">
+                    <h4 class="h3-indice">Gordura viceral</h4>
+                </div>
+                <div class="col-4 d-inline-block">
+                    <input type="text" name="GorduraViceral" mask=medidas value="@Model?.CriarAtulizar?.GorduraViceral" class="form-control form-control-sm text-center" />
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="CadastrarEditarAvaliacaoBioImpedancia_OnClick()" class="btn btn-primary">Salvar</button>
+    </div>
+
+
+</form>

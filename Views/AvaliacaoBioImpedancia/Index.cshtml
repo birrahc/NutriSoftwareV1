@@ -1,0 +1,94 @@
+﻿@model NutriSoftwareV1.Models.Paciente
+
+
+<div class="container-fluid" style="margin-top: 70px;">
+    <div class="row">
+        <div class="col-11 bcAzulMar bdr-20 pt-2 pb-2 bds-1">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 bg-secondary p-1 bdr-5"><h5 class="text-center text-light p-0 m-0">Paciente: <b>@Model.Nome</b> | Idade: <b>@Model?.Idade anos</b> | Altura:<b>@Model?.Altura</b></h5></div>
+                    <div class="col-12 p-0">
+                        <div class="row">
+
+
+                            <div class="col-2 p-0 d-inline-block mt-1">
+                                <div class="container-fluid mt-1 pe-0">
+
+                                    <div class="row">
+                                        <div class="col-12 p-2 bg-secondary borderTopSolidWhite text-light"><b>Data</b></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 p-2 bg-secondary borderTopSolidWhite text-light"><b>Peso</b></div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-12 p-2 bg-secondary borderTopSolidWhite text-light"><b>IMC</b></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 p-2 bg-secondary borderTopSolidWhite text-light"><b>% Gorudura corporal</b></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 p-2 bg-secondary borderTopSolidWhite text-light"><b>% Musc. Esquelético</b></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 p-2 bg-secondary borderTopSolidWhite text-light"><b>Met. Basal</b></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 p-2 bg-secondary borderTopSolidWhite text-light"><b>Idade corporal</b></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 p-2 bg-secondary borderTopSolidWhite text-light"><b>Gord.Veceral</b></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-10 d-inline-block mt-1 ps-3" id="pnlAvaliacoesBioImpedanciaPaciente">
+                                <partial name="Partiais/_ListaAvaliacoesBioImpedancia" for="@Model.AvaliacoesBioImpedancia" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-1 bcAzulMar" style="border-radius: 20px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="float-left">
+                        <nav class="mt-5">
+                            <ul class="m-0 p-0">
+                                <li class="d-flex mt-5"><a href="@Url.Action("Index","Paciente", new {Id=Model.Id})"><img src="~/icons-main/icons/person-badge.svg" alt="Dados Paciente" width="25" height="25" title="Dados Paciente"></a></li>
+                                <li class="d-flex mt-5"><a href="@Url.Action("Index","AvaliacaoBioImpedancia", new {Id=Model.Id})"><img src="~/icons-main/icons/tablet-landscape.svg" alt="Bioimpedância" width="25" height="25" title="BioImpedância"></a></li>
+                                <li class="d-flex mt-5"><a href="@Url.Action("Index","Anminese", new {Id=Model.Id})"><img src="~/icons-main/icons/clipboard.svg" alt="Anminese" width="25" height="25" title="Anminese"></a></li>
+                                <li class="d-flex mt-5"><a href="@Url.Action("Index","Consumos", new {Id=Model.Id})"><img src="~/icons-main/icons/basket2.svg" alt="Consumos" width="25" height="25" title="Consumos"></a></li>
+                                <li class="d-flex mt-5"><a href="#"><img src="~/icons-main/icons/eye-fill.svg" alt="Visualizar" width="25" height="25" title="Visualizar"></a></li>
+                                <li class="d-flex mt-5"><a onclick="AbrirFormularioCadastrarEditarAvaliacaoBioImpedancia_OnClick('@Model?.Id',null)"><img src="~/icons-main/icons/plus-square-fill.svg" alt="Cadastrar Nova" width="25" height="25" title="Cadastrar Nova"></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalCadastroAvalicaoBioImpedancia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="pnlFomularioAvaliacaoBioImpedancia">
+            @* Carregamento via jquery *@
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_AvaliacaoBioImpedanciaScriptsPartial");
+    }
+}

@@ -1,0 +1,72 @@
+﻿
+<script>
+    $(document).ready(function () { 
+        $('span[mask="cpf"]').mask('000.000.000-00', { reverse: true });
+    })
+    function CadastarPaciente_OnClick() {
+        CadastrarEditar('@Url.Action("Create", "Paciente")', 'frmCadastraPaciente', 'pnlDetalhesPaciente', 'modalRegisterForm', 'Paciente cadastrado com sucesso.');
+    }
+
+    function EditarPaciente_OnClick() {
+        CadastrarEditar('@Url.Action("Edit", "Paciente")', 'frmEditarPaciente', 'pnlDetalhesPaciente', 'modalEditForm', 'Dados do paciente alterados com sucesso.');
+    }
+
+    function RemoverPaciente_OnClick(id) {
+        Deletar('@Url.Action("Delete", "Paciente")', id, 'pnlGeralPaciente', 'Paciente removido com sucesso.', 'Você tem certeza que deseja remover este paciente?')
+    }
+
+    function CadastrarAnotacao_OnClick() {
+        CadastrarEditar('@Url.Action("CadastrarAnotacaoPaciente", "Paciente")', 'frmCadastrarAnotacao', 'pnlAnotacoesPaciente', 'modalRegisterObs', 'Anotação cadastrada com sucesso.');
+    }
+    function AbrirModalEditarAnotacoes_OnClick(id) {
+        AbrirFormularioEditar('@Url.Action("EditarAnotacaoPaciente", "Paciente")', id, 'pnlformModal', 'modalEditObs');
+    }
+
+    function EditarAnotacaoPaciente_OnClick() {
+        let form = $('form[name="frmEditarObs"]');
+        let id = convertFormToJSON(form).Id;
+        let mensagemSucesso = "Anotações cadastradas com sucesso."
+        if (id > 0) {
+            mensagemSucesso = "Anotações alteradas com sucesso."
+        }
+        CadastrarEditar('@Url.Action("EditarAnotacaoPaciente", "Paciente")', 'frmEditarObs', 'pnlAnotacoesPaciente', 'modalEditObs', mensagemSucesso);
+    }
+
+    function RemoverAnotacao_OnClick(id) {
+        Deletar('@Url.Action("RemoverAnotacaoPaciente", "Paciente")', id, 'pnlAnotacoesPaciente', 'Anotação removida com sucesso.', 'Você tem certeza que deseja remover esta anotação?')
+    }
+
+    function filtrarPacientes() {
+        const filterElement = document.querySelector('#txtPesquisarPaciente')
+        const pacientes = document.querySelectorAll('.pacientes li')
+
+        if (filterElement.value != '') {
+            for (let paciente of pacientes) {
+                
+                let title = paciente.querySelector('a')
+                title = title.textContent.toLocaleLowerCase()
+               
+                let filerText = filterElement.value.toLocaleLowerCase()
+                console.log(filerText)
+                if (!title.includes(filerText)) {
+                    paciente.style.display = "none"
+                } else {
+                    paciente.style.display = "block"
+                }
+            }
+        } else {
+
+            for (let paciente of pacientes) {
+                paciente.style.display = "block"
+            }
+        }
+    }
+
+    function LimparFiltro_OnClick() { 
+        $(txtPesquisarPaciente).val("");
+        filtrarPacientes();
+    }
+    function DetalhesPaciente_OnClick(url) {
+        Detalhes(url, 'pnlDetalhesPaciente');
+    }
+</script>

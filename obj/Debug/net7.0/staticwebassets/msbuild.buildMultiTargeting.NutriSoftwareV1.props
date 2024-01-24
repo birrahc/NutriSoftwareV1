@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\NutriSoftwareV1.props" />
+</Project>

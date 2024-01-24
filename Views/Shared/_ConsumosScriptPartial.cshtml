@@ -1,0 +1,39 @@
+﻿<script>
+
+    function AbrirFormularioCadastrarEditarConsumos_OnClick(id, consumosId = null) {
+
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("CadastrarEditarConsumos", "Consumos")',
+            data: { Id: id, ConsumosId: consumosId },
+            success: function (response) {
+                $("#pnlFormularioConsumos").html(response);
+                AbrirModal('modalCadastroConsumos');
+
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro...',
+                    text: 'Não foi possivel abrir o formumario',
+                    footer: '<a href>Why do I have this issue?</a>'
+                });
+            }
+        });
+    }
+
+    function CadastrarEditarConsumos_OnClick() {
+
+        let form = $('form[name="frmCadastrarEditarConsumo"]');
+        let dados = convertFormToJSON(form);
+      
+        console.log(dados)
+
+        let mensagemSucesso = "Consumo cadastrado com sucesso."
+        if (dados.Id > 0) {
+            mensagemSucesso = "Dados de consumos alterados com sucesso."
+        }
+        CadastrarEditar('@Url.Action("CadastrarEditarConsumos", "Consumos")', 'frmCadastrarEditarConsumo', 'pnlGeralConsumos', 'modalCadastroConsumos', mensagemSucesso)
+    }
+
+</script>

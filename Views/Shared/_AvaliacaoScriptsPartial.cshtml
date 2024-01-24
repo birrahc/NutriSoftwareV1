@@ -1,0 +1,43 @@
+﻿
+<script>
+    
+    function AbrirFormularioCadastrarEditarAvaliacao_OnClick(id, avaliacaId=null) {
+
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("CadastrarEditarAvaliacaoFisica", "Avaliacao")',
+            data: { Id: id, AvaliacoaId: avaliacaId },
+            success: function (response) {
+                $("#pnlFomularioAvaliacao").html(response);
+                $('input[mask=medidas]').mask('00,0');
+                AbrirModal('modalCadastroAvalicao');
+                
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro...',
+                    text: 'Não foi possivel abrir o formumario',
+                    footer: '<a href>Why do I have this issue?</a>'
+                });
+            }
+        });
+    }
+
+    function CadastrarEditarAvaliacao_OnClick() 
+    {
+        let form = $('form[name="frmCadastrarEditarAvaliacao"]');
+        let dados = convertFormToJSON(form);
+
+        let mensagemSucesso = "Avaliação cadastradas com sucesso."
+        if (dados.Id > 0) {
+            mensagemSucesso = "Avaliação alteradas com sucesso."
+        }
+        CadastrarEditar('@Url.Action("CadastrarEditarAvaliacaoFisica", "Avaliacao")', 'frmCadastrarEditarAvaliacao', 'pnlAvaliacoesPaciente', 'modalCadastroAvalicao',mensagemSucesso)
+    }
+
+    function RemoverAvaliacao_OnClick(id) 
+    {
+        Deletar('@Url.Action("Delete", "Avaliacao")', id, 'pnlAvaliacoesPaciente', 'Avaliação removida com sucesso.', 'Você tem certeza que deseja remover esta avaliação?')
+    }
+</script>

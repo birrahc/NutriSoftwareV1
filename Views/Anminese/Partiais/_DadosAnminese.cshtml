@@ -1,0 +1,127 @@
+﻿@model Anminese
+@if (Model != null)
+{
+    <div class="col-12 bg-secondary p-1 bdr-5"><h5 class="text-center text-light p-0 m-0">Paciente: <b>@Model.Paciente.Nome</b></h5></div>
+    <div class="col-12 p-0">
+        <div class="row">
+
+            <div class="col-12 p-0 d-inline-block mt-1">
+                <div class="container-fluid mt-1 pe-0">
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Objetivo</label>
+                            <input type="text" readonly value="@Model.Objetivo" class="form-control form-control-sm w-100" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Diagnóstico Médico</label>
+                            <input type="text" readonly value="@Model?.DiagnosticoMedico?.Descricao" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsDiagnosticoMedico" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Exames</label>
+                            <input type="text" readonly value="@Model?.Exames" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsExames" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Medicamentos</label>
+                            <input type="text" readonly value="@Model?.Medicamentos" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsMedicamentos" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Suplementos</label>
+                            <input type="text" readonly value="@Model?.Suplementos" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsSuplementos" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Histórico familiar</label>
+                            <input type="text" readonly value="@Model?.HistoricoFamiliar?.Descricao" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsHistoricoFamiliar" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Sinais e sintomas</label>
+                            <input type="text" readonly value="@Model?.SinaisESintomas" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.Obs_Sinais_Sintomas" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Hábitos intestinais</label>
+                            <input type="text" readonly value="@Model?.HabitosIntestinais" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.Obs_Hab_Intestinal" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Tabagismo</label>
+                            <input type="text" readonly value="@Model?.Tabagismo" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.Obs_Tabagismo" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Etilismo</label>
+                            <input type="text" readonly value="@Model?.Etilismo" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.Obs_Etilismo" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label>Atividades Físicas</label>
+                            <input type="text" readonly value="@Model?.AtividadesFiscia?.Descricao" class="form-control form-control-sm" />
+                        </div>
+                        <div class="col-8">
+                            <br />
+                            <input type="text" readonly value="@Model?.ObsAtividadesFisicas" class="form-control form-control-sm" />
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+else
+{
+    <p class="text-center">Este paciente não possui Anminese cadastrada. <a onclick="AbrirFormularioCadastrarEditarAnminese_OnClick('@ViewBag.Id','null')" class="btn btn-link">Cadastrar</a></p>
+}

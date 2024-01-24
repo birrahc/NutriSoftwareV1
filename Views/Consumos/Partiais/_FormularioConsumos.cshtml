@@ -1,0 +1,161 @@
+﻿@using NutriSoftwareV1.Enums
+@model ConsumoAlimentar
+
+<form name="frmCadastrarEditarConsumo" method="post" class="p-0 m-0">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">@ViewBag.Titulo</h5>
+    </div>
+
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <input type="hidden" asp-for="PacienteId" value="@ViewBag.PacienteId" />
+                <input type="hidden" asp-for="Id" value="@Model?.Id" />
+                <div class="col-3">
+                    <label>Água</label>
+                   
+                    <select asp-for="Agua" asp-items="@Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsAgua" class="form-control form-control-sm" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Sucos</label>
+                    <select asp-for="Sucos" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsSucos" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Liq. Durante as refeições </label>
+                    <select asp-for="DuranteAsRefeicoes" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsDuranteAsRefeicoes" class="form-control form-control-sm" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Refrigerantes</label>
+                    <select asp-for="Refrigerantes" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsRefrigerantes" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Açucares</label>
+                    <select asp-for="Acucares" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsAcucares" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Sódio</label>
+                    <select asp-for="Sodio" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsSodio" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Cereais</label>
+                    <select asp-for="Cereais" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsCereais" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Frutas</label>
+                    <select asp-for="Frutas" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsFrutas" class="form-control form-control-sm" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Verduras</label>
+                    <select asp-for="Verduras" asp-items="Html.GetEnumSelectList<EN_Afirmacao>()" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="ObsVerduras" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label>Local de almoço</label>
+                    <select asp-for="LocalAlmocoId" asp-items="ViewBag.LocaisAlmoco" class="form-select form-select-sm">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-9">
+                    <label>Obs</label>
+                    <input type="text" asp-for="LocalAlmoco" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label>Preferências</label>
+                    <input type="text" asp-for="Preferencias" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <label>Aversões</label>
+                    <input type="text" asp-for="Aversoes" class="form-control form-control-sm" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="CadastrarEditarConsumos_OnClick()" class="btn btn-primary">Save changes</button>
+    </div>
+</form>

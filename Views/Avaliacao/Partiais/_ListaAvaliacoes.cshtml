@@ -1,0 +1,240 @@
+﻿@model IEnumerable<NutriSoftwareV1.Models.AvaliacaoFisica>
+
+<div class="container-fluid mt-1 ps-0 pe-0 w-100" style="overflow-x: auto;">
+    <div class="d-flex" style="white-space: nowrap;">
+        @foreach (var avaliacao in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @avaliacao.Consulta ° Aval</div>
+        }
+    </div>
+    <div style="clear:both"></div>
+
+    <div class="d-flex">
+        @foreach (var data in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @data?.DataAvaliacao.ToShortDateString()</div>
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var peso in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @peso?.Peso.ToString("N1")</div>
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var linha in Model)
+        {
+            <div class="col-2 d-inline-block bg-secondary text-secondary borderTopLeftGrey" style="border-left:none !important;"> <br /> </div>
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cCintura in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @cCintura?.C_Cintura?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cAbdominal in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @cAbdominal.C_Abdominal?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cQuadril in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @cQuadril?.C_Quadril?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cPeito in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @cPeito?.C_Peito?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cBracoD in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @cBracoD?.C_Braco_D?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cBracoE in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @cBracoE?.C_Braco_E?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cCoxaD in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @cCoxaD?.C_Coxa_D?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cCoxaE in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @cCoxaE?.C_Coxa_E?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cPanturrilhaD in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey">
+                @if(cPanturrilhaD.Panturrilha_D.HasValue){
+                    @cPanturrilhaD?.Panturrilha_D?.ToString("N1")
+                }
+                else { <Span>-----</span> }
+                   
+            </div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var cPanturrilhaE in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey">
+                @if (cPanturrilhaE.Panturrilha_E.HasValue)
+                {
+                    @cPanturrilhaE?.Panturrilha_E?.ToString("N1")
+                }
+                else{<Span>-----</span>}
+                
+            </div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var linha in Model)
+        {
+            <div class="col-2 d-inline-block bg-secondary text-secondary borderTopLeftGrey" style="border-left:none !important;"> <br /> </div>
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var dcTriceps in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @dcTriceps?.Dc_Triceps?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var dcEscapular in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @dcEscapular?.Dc_Escapular?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var dcSupra in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @dcSupra?.Dc_Supra_Iliaca?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var dcAbdominal in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @dcAbdominal?.Dc_Abdominal?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var dcAxilar in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @dcAxilar?.Dc_Axilar?.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var dcPeitoral in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @dcPeitoral?.Dc_Peitoral?.ToString("N1")</div>
+
+        }
+    </div>
+    <div class="d-flex">
+        @foreach (var dcCoxa in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @dcCoxa?.Dc_coxa?.ToString("N1")</div>
+
+        }
+    </div>
+
+
+
+    <div class="d-flex">
+        @foreach (var percGordura in Model)
+        {
+            string textColor = "text-success";
+
+            if (percGordura.PercentualGordura > 25)
+            {
+                textColor = "text-danger";
+            }
+            else if (percGordura.PercentualGordura >= 23 && percGordura.PercentualGordura <= 25)
+            {
+                textColor = "text-warning";
+            }
+
+            <div class="col-2 @textColor d-inline-block bg-light fw-bold text-center borderTopLeftGrey"> @percGordura?.PercentualGordura?.ToString("N1")%</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var massaMuscular in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @massaMuscular?.MassaMuscular?.ToString("N1") Kg</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var gordura in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey"> @gordura?.Gordura?.ToString("N1") Kg</div>
+
+        }
+    </div>
+
+    <div class="d-flex pb-1">
+        @foreach (var menusId in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey">
+                <button onclick="AbrirFormularioCadastrarEditarAvaliacao_OnClick('@menusId.PacienteId', '@menusId.Id')" class="btn" style="width:15px">
+                    <img src="~/icons-main/icons/pencil-square.svg" alt="Editar" width="15" height="15" title="Editar">
+                </button>
+                <button onclick="RemoverAvaliacao_OnClick('@menusId.Id')" class="btn" style="width:15px">
+                    <img src="~/icons-main/icons/x-circle-fill.svg" alt="Deletar" width="15" height="15" title="Deletar">
+                </button>
+            </div>
+
+        }
+    </div>
+
+</div>

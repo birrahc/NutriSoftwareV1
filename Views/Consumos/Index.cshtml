@@ -1,0 +1,23 @@
+﻿@using NutriSoftwareV1.Enums
+@model NutriSoftwareV1.Models.ConsumoAlimentar
+@{
+    string isvisible = Model != null ? "block" : "none";
+}
+
+<div class="container-fluid" style="margin-top: 70px;" id="pnlGeralConsumos">
+    <partial name="Partiais/_GeralConsumos" for="@Model" />
+</div>
+
+<div class="modal fade" id="modalCadastroConsumos" tabindex="-1" aria-labelledby="modalCadastroConsumosModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="pnlFormularioConsumos">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ConsumosScriptPartial");
+    }
+}
+

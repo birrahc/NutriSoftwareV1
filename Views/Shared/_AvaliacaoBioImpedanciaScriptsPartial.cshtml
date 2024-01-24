@@ -1,0 +1,43 @@
+﻿
+<script>
+    
+    function AbrirFormularioCadastrarEditarAvaliacaoBioImpedancia_OnClick(id, avaliacaId=null) {
+
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("CadastrarEditarAvaliacaoBioImpedancia", "AvaliacaoBioImpedancia")',
+            data: { Id: id, AvaliacoaId: avaliacaId },
+            success: function (response) {
+                $("#pnlFomularioAvaliacaoBioImpedancia").html(response);
+                $('input[mask=medidas]').mask('00,0');
+                AbrirModal('modalCadastroAvalicaoBioImpedancia');
+                
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro...',
+                    text: 'Não foi possivel abrir o formumario',
+                    footer: '<a href>Why do I have this issue?</a>'
+                });
+            }
+        });
+    }
+
+    function CadastrarEditarAvaliacaoBioImpedancia_OnClick() 
+    {
+        let form = $('form[name="frmCadastrarEditarAvaliacaoBioImpendancia"]');
+        let dados = convertFormToJSON(form);
+
+        let mensagemSucesso = "Avaliação cadastradas com sucesso."
+        if (dados.Id > 0) {
+            mensagemSucesso = "Avaliação alteradas com sucesso."
+        }
+        CadastrarEditar('@Url.Action("CadastrarEditarAvaliacaoBioImpedancia", "AvaliacaoBioImpedancia")', 'frmCadastrarEditarAvaliacaoBioImpendancia', 'pnlAvaliacoesBioImpedanciaPaciente', 'modalCadastroAvalicaoBioImpedancia', mensagemSucesso)
+    }
+
+    function RemoverAvaliacao_OnClick(id) 
+    {
+        Deletar('@Url.Action("Delete", "AvaliacaoBioImpedancia")', id, 'pnlAvaliacoesBioImpedanciaPaciente', 'Avaliação removida com sucesso.', 'Você tem certeza que deseja remover esta avaliação?')
+    }
+</script>

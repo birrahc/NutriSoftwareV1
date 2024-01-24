@@ -1,0 +1,87 @@
+﻿@model IEnumerable<NutriSoftwareV1.Models.AvalicaoBioImpedancia>
+
+<div class="container-fluid mt-1 ps-0 pe-0 w-100" style="overflow-x: auto;">
+
+
+    <div class="d-flex">
+        @foreach (var data in Model)
+        {
+            <div class="col-2 p-2 d-inline-block bg-light text-center borderTopLeftGrey"> @data?.Data.ToShortDateString()</div>
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var peso in Model)
+        {
+            <div class="col-2 p-2 d-inline-block bg-light text-center borderTopLeftGrey"> @peso?.Peso.ToString("N1")</div>
+        }
+    </div>
+
+
+
+    <div class="d-flex">
+        @foreach (var imc in Model)
+        {
+            <div class="col-2 p-2 d-inline-block bg-light text-center borderTopLeftGrey"> @imc?.IMC.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var percGordCorp in Model)
+        {
+            <div class="col-2 p-2 d-inline-block bg-light text-center borderTopLeftGrey"> @percGordCorp.PercentualGorduraCorporal.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var percMuscEsq in Model)
+        {
+            <div class="col-2 p-2 d-inline-block bg-light text-center borderTopLeftGrey"> @percMuscEsq.PercentualMusculoEsqueletico.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var metBasal in Model)
+        {
+            <div class="col-2 p-2 d-inline-block bg-light text-center borderTopLeftGrey"> @metBasal.MetaBolismoBasal.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var idadeCorporal in Model)
+        {
+            <div class="col-2 p-2 d-inline-block bg-light text-center borderTopLeftGrey"> @idadeCorporal.IdadeCorporal</div>
+
+        }
+    </div>
+
+    <div class="d-flex">
+        @foreach (var gorduraViceral in Model)
+        {
+            <div class="col-2 p-2 d-inline-block bg-light text-center borderTopLeftGrey"> @gorduraViceral.GorduraViceral.ToString("N1")</div>
+
+        }
+    </div>
+
+    <div class="d-flex pb-1">
+        @foreach (var menusId in Model)
+        {
+            <div class="col-2 d-inline-block bg-light text-center borderTopLeftGrey">
+                <button onclick="AbrirFormularioCadastrarEditarAvaliacaoBioImpedancia_OnClick('@menusId.PacienteId', '@menusId.Id')" class="btn" style="width:15px">
+                    <img src="~/icons-main/icons/pencil-square.svg" alt="Editar" width="15" height="15" title="Editar">
+                </button>
+                <button onclick="RemoverAvaliacao_OnClick('@menusId.Id')" class="btn" style="width:15px">
+                    <img src="~/icons-main/icons/x-circle-fill.svg" alt="Deletar" width="15" height="15" title="Deletar">
+                </button>
+            </div>
+
+        }
+    </div>
+
+
+
+</div>

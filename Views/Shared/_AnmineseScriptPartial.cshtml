@@ -1,0 +1,37 @@
+﻿<script>
+
+    function AbrirFormularioCadastrarEditarAnminese_OnClick(id, anmineseId = null) {
+
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("CadastrarEditarAnminese", "Anminese")',
+            data: { Id: id, AnmineseId: anmineseId },
+            success: function (response) {
+                $("#pnlFormularioAnminese").html(response);
+                AbrirModal('modalCadastroAnminese');
+
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro...',
+                    text: 'Não foi possivel abrir o formumario',
+                    footer: '<a href>Why do I have this issue?</a>'
+                });
+            }
+        });
+    }
+
+    function CadastrarEditarAvaliacao_OnClick() {
+        let form = $('form[name="frmCadastrarEditarAnminese"]');
+        let dados = convertFormToJSON(form);
+
+        console.log(dados);
+        let mensagemSucesso = "Anminese cadastrada com sucesso."
+        if (dados.Id > 0) {
+            mensagemSucesso = "Dados anminese alterados com sucesso."
+        }
+        CadastrarEditar('@Url.Action("CadastrarEditarAnminese", "Anminese")', 'frmCadastrarEditarAnminese', 'pnlGeralAnminese', 'modalCadastroAnminese', mensagemSucesso)
+    }
+
+</script>

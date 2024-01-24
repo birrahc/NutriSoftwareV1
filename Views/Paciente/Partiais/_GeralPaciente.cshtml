@@ -1,0 +1,48 @@
+﻿@model IEnumerable<NutriSoftwareV1.Models.Paciente>
+
+@{
+    Paciente DetalhePaciente = @ViewBag.DetalhePaciente;
+}
+
+<div class="row m-0">
+
+    <div class="col-4 bcAzulMar bdr-20 bd-top-bottom-left">
+        <div class="mt-2 bg-secondary p-2">
+            <input oninput="filtrarPacientes()" class="form-control d-inline-block w-75" type="text" name="pesquisar" id="txtPesquisarPaciente" />
+            <button onclick="LimparFiltro_OnClick()" class="d-inline-block btn btn-light" style="width:22%;">Limpar</button>
+        </div>
+        <div class="pacientes height-390 overflow-auto">
+            <ul class="p-0 list-stile-None">
+                @foreach (var item in Model)
+                {
+                    <li class="bg-light mt-1"><a class="ml-2 text-secondary text-decoration-none" onclick="DetalhesPaciente_OnClick('@Url.Action("Index","Paciente",new {Id=item.Id})')" style="padding-left:3px; cursor:pointer">@item.Nome</a></li>
+                }
+            </ul>
+        </div>
+        <div class="text-right mt-2">
+            <button class="btn" onclick="AbrirModal('modalRegisterForm')">
+                <img src="~/icons-main/icons/file-plus.svg" alt="Cadastrar Paciente" width="25" height="25" title="Cadastrar Paciente">
+            </button>
+        </div>
+
+
+    </div>
+    <div class="col-5 bg-light height-500 bdr-20 bds-1" id="pnlDetalhesPaciente">
+        <partial name="Partiais/_DetalhesPaciente" for="@DetalhePaciente" />
+    </div>
+
+    <div class="col-3 bg-light position-static bdr-20 bds-1" style="height: 500px;">
+        <h4 class="bg-secondary text-light text-center mt-2 p-2">Anotações</h4>
+
+        <div class="container-fluid p-0" style="overflow-x: hidden; overflow-y: auto;height: 78%;" id="pnlAnotacoesPaciente">
+            <partial name="Partiais/_AnotacoesPaciente" for="@DetalhePaciente.Anotacoes" />
+        </div>
+
+        <div class="text-right mt-2">
+            <button type="button" onclick="AbrirModal('modalRegisterObs')" class="btn" data-toggle="modal" data-target="#modalRegisterObs">
+                <img src="~/icons-main/icons/file-plus.svg" alt="Cadastrar Paciente" width="25" height="25" title="Cadastrar Paciente">
+            </button>
+        </div>
+
+    </div>
+</div>
