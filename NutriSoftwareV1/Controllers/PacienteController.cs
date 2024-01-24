@@ -44,7 +44,7 @@ namespace NutriSoftwareV1.Controllers
             }
             using (NutriDbContext db = new NutriDbContext())
             {
-                pPaciente.Cpf = pPaciente.Cpf.Replace(".", "").Replace("-", "");
+                pPaciente.Cpf = string.IsNullOrEmpty(pPaciente.Cpf) ? null : pPaciente.Cpf.Replace(".", "").Replace("-", "");
                 db.pacientes.Add(pPaciente);
                 db.SaveChanges();
                 var pacienteCadastrado = db.pacientes.FirstOrDefault(p => p.Id == pPaciente.Id);
