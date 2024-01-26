@@ -27,7 +27,7 @@ namespace NutriSoftwareV1.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Server=localhost; Database=softnutricaov1; Convert Zero Datetime=True; Uid=root; Pwd=123456;",
+                optionsBuilder.UseMySQL("Server=localhost; Database=softnutricaov1; Convert Zero Datetime=True; Uid=root; Pwd=nin@2110;",
                     options => options.EnableRetryOnFailure());
             }
         }
