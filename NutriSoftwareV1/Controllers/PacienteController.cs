@@ -19,11 +19,24 @@ namespace NutriSoftwareV1.Controllers
                 var pacientes = db.pacientes.Include(p => p.Anotacoes).OrderBy(p => p.Nome).ToList();
                 if (Id.HasValue)
                 {
+                    ViewBag.DetalhePaciente = Id.Value;
                     ViewBag.DetalhePaciente = pacientes.FirstOrDefault(p => p.Id == Id.Value);
-                    if(requestJs)
+                    if (requestJs)
                         return PartialView("Partiais/_DetalhesPaciente", pacientes.FirstOrDefault(p => p.Id == Id.Value));
                 }
                 return View(pacientes);
+            }
+        }
+
+        public IActionResult CadastrarEditarPaciente(long? Id)
+        {
+            using (NutriDbContext db =new NutriDbContext())
+            {
+                if (Id.HasValue)
+                {
+                    return PartialView("Partiais/_FormularioCadastrarEditarPaciente", db.pacientes.Find(Id));
+                }
+                return PartialView("Partiais/_FormularioCadastrarEditarPaciente", new Paciente());
             }
         }
 
@@ -97,6 +110,25 @@ namespace NutriSoftwareV1.Controllers
 
 
         #region Anotacões
+        public IActionResult ObservacoesPaciente(long Id)
+        {
+            using (NutriDbContext db = new NutriDbContext())
+            {
+                var anotacoes = db.pacientes.Include(p => p.Anotacoes).FirstOrDefault(p => p.Id == Id);
+                var pacienteAnotacoes = anotacoes == null ? new Paciente { Id = Id } : anotacoes;
+                return PartialView("Partiais/_AnotacoesPaciente", pacienteAnotacoes);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult CadastrarAnotacaoPaciente(int Id)
+        {
+            ViewBag.TitleModalAnotacoes = "Cadastro de anotações";
+            ViewBag.BotaoTituloCadastroAnotacoes = "Salvar";
+            ViewBag.DetalhePaciente = Id;
+            return PartialView("Partiais/_FormularioCadastrarEditarAnotacaoPaciente", new Observacao { PacienteId = Id, DataObservacao=DateTime.Now});
+
+        }
         [HttpPost]
         public IActionResult CadastrarAnotacaoPaciente(Observacao pAnotacao)
         {
@@ -104,19 +136,21 @@ namespace NutriSoftwareV1.Controllers
             {
                 db.AnotacosPaciente.Add(pAnotacao);
                 db.SaveChanges();
-                var anotacoes = db.AnotacosPaciente.Where(p => p.PacienteId == pAnotacao.PacienteId).Include(p => p.Paciente).OrderByDescending(p => p.DataObservacao).ToList();
+                var anotacoesPaciente = db.pacientes.Include(p => p.Anotacoes).FirstOrDefault(p=>p.Id == pAnotacao.PacienteId);
 
-                return PartialView("Partiais/_AnotacoesPaciente", anotacoes);
+                return PartialView("Partiais/_AnotacoesPaciente", anotacoesPaciente);
             }
         }
         [HttpGet]
         public IActionResult EditarAnotacaoPaciente(int Id)
         {
+            ViewBag.TitleModalAnotacoes = "Alteração de anotação";
+            ViewBag.BotaoTituloCadastroAnotacoes = "Salvar alterações";
             using (NutriDbContext db = new NutriDbContext())
             {
                 var anotacao = db.AnotacosPaciente.Include(p => p.Paciente).FirstOrDefault(p => p.Id == Id);
 
-                return PartialView("Partiais/_FormularioEditarAnotacaoPaciente", anotacao);
+                return PartialView("Partiais/_FormularioCadastrarEditarAnotacaoPaciente", anotacao);
             }
         }
 
@@ -127,7 +161,7 @@ namespace NutriSoftwareV1.Controllers
             {
                 db.AnotacosPaciente.Update(pAnotacao);
                 db.SaveChanges();
-                var anotacoesPaciente = db.AnotacosPaciente.Where(p => p.PacienteId == pAnotacao.PacienteId).OrderByDescending(p => p.DataObservacao).ToList();
+                var anotacoesPaciente = db.pacientes.Include(a=>a.Anotacoes).FirstOrDefault(p=>p.Id==pAnotacao.PacienteId);
                 return PartialView("Partiais/_AnotacoesPaciente", anotacoesPaciente);
             }
         }
@@ -141,7 +175,7 @@ namespace NutriSoftwareV1.Controllers
                 var idPaciente = anotacao.PacienteId;
                 db.AnotacosPaciente.Remove(anotacao);
                 db.SaveChanges();
-                var anotacoesPaciente = db.AnotacosPaciente.Where(p => p.PacienteId == idPaciente).OrderByDescending(p => p.DataObservacao).ToList();
+                var anotacoesPaciente = db.pacientes.Include(a=>a.Anotacoes).FirstOrDefault(p=>p.Id== idPaciente);
                 return PartialView("Partiais/_AnotacoesPaciente", anotacoesPaciente);
             }
         }

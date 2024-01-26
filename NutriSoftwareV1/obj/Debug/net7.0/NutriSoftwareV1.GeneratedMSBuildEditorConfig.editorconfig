@@ -102,8 +102,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcUGFydGlhaXNcX0RldGFsaGVzUGFjaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Partiais/_FormularioEditarAnotacaoPaciente.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcUGFydGlhaXNcX0Zvcm11bGFyaW9FZGl0YXJBbm90YWNhb1BhY2llbnRlLmNzaHRtbA==
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Partiais/_FormularioCadastrarEditarAnotacaoPaciente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcUGFydGlhaXNcX0Zvcm11bGFyaW9DYWRhc3RyYXJFZGl0YXJBbm90YWNhb1BhY2llbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Partiais/_FormularioCadastrarEditarPaciente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcUGFydGlhaXNcX0Zvcm11bGFyaW9DYWRhc3RyYXJFZGl0YXJQYWNpZW50ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/programacao/Projetos/NET7/NutriSoftwareV1/NutriSoftwareV1/Views/Paciente/Partiais/_GeralPaciente.cshtml]
