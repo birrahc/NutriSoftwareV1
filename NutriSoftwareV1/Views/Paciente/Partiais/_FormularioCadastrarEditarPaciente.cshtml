@@ -42,7 +42,7 @@
             </div>
             <div class="col-4 d-lg-inline-block">
                 <label class="m-0 fs-10" data-error="wrong" data-success="right" for="altura">Altura</label>
-                <input type="text" name="Altura" value="@Model?.Altura" id="altura" class="form-control form-control-sm w-100">
+                <input type="text" name="Altura" mask="altura" value="@Model?.Altura" id="altura" class="form-control form-control-sm w-100">
             </div>
         </div>
 
@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col-12">
                 <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Telefone</label>
-                <input type="text" name="Telefone" value="@Model?.Telefone" id="orangeForm-pass" class="form-control form-control-sm">
+                <input type="text" name="Telefone" oninput="TelefoneMask(this.id)" value="@Model?.Telefone" id="txtTelefone" class="form-control form-control-sm">
             </div>
         </div>
 

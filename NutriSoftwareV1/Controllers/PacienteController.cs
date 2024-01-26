@@ -4,6 +4,7 @@ using NutriSoftwareV1.Data;
 using NutriSoftwareV1.Models;
 using Org.BouncyCastle.Asn1.Ocsp;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace NutriSoftwareV1.Controllers
 {
@@ -58,6 +59,7 @@ namespace NutriSoftwareV1.Controllers
             using (NutriDbContext db = new NutriDbContext())
             {
                 pPaciente.Cpf = string.IsNullOrEmpty(pPaciente.Cpf) ? null : pPaciente.Cpf.Replace(".", "").Replace("-", "");
+
                 db.pacientes.Add(pPaciente);
                 db.SaveChanges();
                 var pacienteCadastrado = db.pacientes.FirstOrDefault(p => p.Id == pPaciente.Id);
@@ -73,6 +75,9 @@ namespace NutriSoftwareV1.Controllers
             {
                 if (!string.IsNullOrEmpty(pPaciente.Cpf))
                     pPaciente.Cpf = pPaciente.Cpf.Replace(".", "").Replace("-", "");
+
+                if (!string.IsNullOrEmpty(pPaciente.Telefone))
+                    pPaciente.Telefone = RemoverMascaraTelefone(pPaciente.Telefone);
                 db.pacientes.Update(pPaciente);
                 db.SaveChanges();
                 var pacienteCadastrado = db.pacientes.FirstOrDefault(p => p.Id == pPaciente.Id);
@@ -180,7 +185,16 @@ namespace NutriSoftwareV1.Controllers
             }
         }
 
+
         #endregion
+
+        public static string RemoverMascaraTelefone(string telefone)
+        {
+            // Remove caracteres não numéricos
+            string numeroLimpo = Regex.Replace(telefone, @"[^\d]", "");
+
+            return numeroLimpo;
+        }
 
     }
 }

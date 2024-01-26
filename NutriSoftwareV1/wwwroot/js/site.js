@@ -17,6 +17,7 @@ function AbrirFormularioEditar(url, id, pnlResutado, modalId) {
             $('#' + pnlResutado).html(response);
             AbrirModal(modalId);
             Mascaras();
+            
         },
         error: function () {
             Swal.fire({
@@ -49,6 +50,8 @@ function CadastrarEditar(url, formName, pnlResutado, modalId, mensagemSucesso) {
 
             FecharModal(modalId);
             $('#' + pnlResutado).html(response);
+            Mascaras();
+
         },
         error: function (response) {
             var obj = jQuery.parseJSON(response.responseText);
@@ -182,6 +185,9 @@ function Mascaras()
 {
     $('input[mask="cpf"]').mask('000.000.000-00', { reverse: true });
     $('span[mask="cpf"]').mask('000.000.000-00', { reverse: true });
+    $('input[mask="altura"]').mask('0,00', { reverse: true });
+    $('span[mask="altura"]').mask('0,00', { reverse: true });
+    MaskFone();
 }
 
 function ConverterFormularioParaJson(formName) {
@@ -195,4 +201,58 @@ function ConverterFormularioParaJson(formName) {
 
     // Converter o objeto JavaScript para JSON
     var jsonData = JSON.stringify(formObject);
+}
+
+function TelefoneMask(txtTelefoneId) {
+    let phoneNumber = $("#" + txtTelefoneId).val().replace(/\D/g, ''); // Remove caracteres não numéricos
+
+    const celularPattern = /^(\d{2})9\d{8}$/;
+    const fixoPattern = /^(\d{2})\d{8}$/;
+    // Detecta o tipo de telefone
+    let tipoTelefone = "";
+    if (celularPattern.test(phoneNumber)) {
+        tipoTelefone = "celular";
+    } else if (fixoPattern.test(phoneNumber)) {
+        tipoTelefone = "fixo";
+    }
+
+    // Aplica a máscara correspondente
+    if (tipoTelefone === "celular") {
+        $("#" + txtTelefoneId).val(phoneNumber.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3'));
+    } else if (tipoTelefone === "fixo") {
+        $("#" + txtTelefoneId).val(phoneNumber.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3'));
+    } else {
+        // Não é um formato reconhecido
+        $("#" + txtTelefoneId).val(phoneNumber);
+    }
+}
+
+function MaskFone()
+{
+
+    let phoneNumber = $("#txtFone").text().replace(/\D/g, ''); // Remove caracteres não numéricos
+
+    
+
+    const celularPattern = /^(\d{2})9\d{8}$/;
+    const fixoPattern = /^(\d{2})\d{8}$/;
+    // Detecta o tipo de telefone
+    let tipoTelefone = "";
+    if (celularPattern.test(phoneNumber)) {
+        tipoTelefone = "celular";
+    } else if (fixoPattern.test(phoneNumber)) {
+        tipoTelefone = "fixo";
+    }
+
+    // Aplica a máscara correspondente
+    if (tipoTelefone === "celular") {
+        console.log("TestFone Celular" + phoneNumber)
+        $("#txtFone").text(phoneNumber.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3'));
+    } else if (tipoTelefone === "fixo") {
+        console.log("TestFone Fixo" + phoneNumber)
+        $("#txtFone").text(phoneNumber.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3'));
+    } else {
+        console.log("TestFone nenhum" + phoneNumber)
+        $("#txtFone").text(phoneNumber);
+    }
 }

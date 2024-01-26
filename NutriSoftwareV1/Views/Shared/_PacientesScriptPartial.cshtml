@@ -2,10 +2,15 @@
 <script>
     $(document).ready(function () { 
         $('span[mask="cpf"]').mask('000.000.000-00', { reverse: true });
+        
     })
 
     function AbrirModalCadastarEditarPaciente_OnClick(id) {
         AbrirFormularioEditar('@Url.Action("CadastrarEditarPaciente", "Paciente")', id, 'pnlFormularioCadastroPaciente', 'modalCadastrarEditarPaciente')
+        if (id == null || id == "") 
+        {
+            
+        }
     }
 
     function CadastarPaciente_OnClick() {

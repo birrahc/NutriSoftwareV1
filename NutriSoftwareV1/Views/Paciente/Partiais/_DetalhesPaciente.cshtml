@@ -8,24 +8,20 @@
     <p class="bcAzulMar pl-5 ftsinze-18 p-2"><b class="ms-2 text-secondary">Nascimento:</b><span class="ps-2">@Model.DataNascimento?.ToShortDateString()</span> </p>
     <p class="bcAzulMar pl-5 ftsinze-18 p-2">
         <b class="ms-2 text-secondary">Idade:</b><span class="ms-1">@Model.Idade</span>
-        <b class="ms-2 text-secondary">Altura:</b><span class="ms-1">@Model.Altura</span>
+        <b class="ms-2 text-secondary">Altura:</b><span mask="altura" class="ms-1">@Model.Altura</span>
     </p>
     <p class="bcAzulMar pl-5 ftsinze-18 p-2"><b class="ms-2 text-secondary">E-Mail:</b><span class="ms-2">@Model.Email</span></p>
-    <p class="bcAzulMar pl-5 ftsinze-18 p-2"><b class="ms-2 text-secondary">Telefone:</b><span class="ps-2">@Model.Telefone</span> </p>
+    <p class="bcAzulMar pl-5 ftsinze-18 p-2"><b class="ms-2 text-secondary">Telefone:</b><span class="ps-2" id="txtFone">@Model.Telefone</span> </p>
     <nav>
         <ul class="list-stile-None">
-            <li class="d-inline-block m-2"><button type="button" onclick="AbrirModalCadastarEditarPaciente_OnClick('@Model.Id')" class="btn" data-toggle="modal" data-target="#modalEditForm"><img src="~/icons-main/icons/pencil-square.svg" alt="Editar" width="25" height="25" title="Editar"></button></li>
-            <li class="d-inline-block m-2"><a href="@Url.Action("Index","Anminese",new{Id=Model.Id})"><img src="~/icons-main/icons/clipboard.svg" alt="Anminese" width="25" height="25" title="Anminese"></a></li>
-            <li class="d-inline-block m-2"><a href="@Url.Action("Index","Consumos",new {Id=Model.Id})"><img src="~/icons-main/icons/basket2.svg" alt="Consumos" width="25" height="25" title="Consumos"></a></li>
-            <li class="d-inline-block m-2"><a href="@Url.Action("Index","Avaliacao", new{id=Model.Id})"><img src="~/icons-main/icons/table.svg" alt="Avaliações" width="25" height="25" title="Avaliações"></a></li>
-            <li class="d-inline-block m-2"><a href="@Url.Action("Index","AvaliacaoBioImpedancia", new{id=Model.Id})"><img src="~/icons-main/icons/tablet-landscape.svg" alt="Bioimpedância" width="25" height="25" title="BioImpedância"></a></li>
-            <li class="d-inline-block m-2"><a onclick="AnotacoesPaciente_OnClick('@Model.Id')" style="cursor:pointer"><img src="~/icons-main/icons/journals.svg" alt="Anotações" width="25" height="25" title="Anotações"></a></li>
-            <li class="d-inline-block m-2"><a href="ListPagamentos.php?idpac={$this->getId_Pessoa()}"><img src="~/icons-main/icons/cash-stack.svg" alt="Pagamentos" width="25" height="25" title="Pagamentos"></a></li>
-            <li class="d-inline-block m-2">
-
-                <button type="button" onclick="RemoverPaciente_OnClick('@Model.Id') " class="btn"><img src="~/icons-main/icons/trash.svg" alt="Excluir" width="25" height="25" title="Excluir"></button>
-                
-            </li>
+            <li class="d-inline-block m-2 w-auto"><button type="button" onclick="AbrirModalCadastarEditarPaciente_OnClick('@Model.Id')" class="btn" data-toggle="modal" data-target="#modalEditForm"><img src="~/icons-main/icons/pencil-square.svg" alt="Editar" width="25" height="25" title="Editar"></button></li>
+            <li class="d-inline-block m-2 w-auto"><a href="@Url.Action("Index","Anminese",new{Id=Model.Id})"><img src="~/icons-main/icons/clipboard.svg" alt="Anminese" width="25" height="25" title="Anminese"></a></li>
+            <li class="d-inline-block m-2 w-auto"><a href="@Url.Action("Index","Consumos",new {Id=Model.Id})"><img src="~/icons-main/icons/basket2.svg" alt="Consumos" width="25" height="25" title="Consumos"></a></li>
+            <li class="d-inline-block m-2 w-auto"><a href="@Url.Action("Index","Avaliacao", new{id=Model.Id})"><img src="~/icons-main/icons/table.svg" alt="Avaliações" width="25" height="25" title="Avaliações"></a></li>
+            <li class="d-inline-block m-2 w-auto"><a href="@Url.Action("Index","AvaliacaoBioImpedancia", new{id=Model.Id})"><img src="~/icons-main/icons/tablet-landscape.svg" alt="Bioimpedância" width="25" height="25" title="BioImpedância"></a></li>
+            <li class="d-inline-block m-2 w-auto"><a onclick="AnotacoesPaciente_OnClick('@Model.Id')" style="cursor:pointer"><img src="~/icons-main/icons/journals.svg" alt="Anotações" width="25" height="25" title="Anotações"></a></li>
+            <li class="d-inline-block m-2 w-auto"><a href="ListPagamentos.php?idpac={$this->getId_Pessoa()}"><img src="~/icons-main/icons/cash-stack.svg" alt="Pagamentos" width="25" height="25" title="Pagamentos"></a></li>
+            <li class="d-inline-block m-2 w-auto"><a onclick="RemoverPaciente_OnClick('@Model.Id')" class="btn" style="cursor:pointer;"><img src="~/icons-main/icons/trash.svg" alt="Excluir" width="25" height="25" title="Excluir"></a></li>
         </ul>
     </nav>
 }

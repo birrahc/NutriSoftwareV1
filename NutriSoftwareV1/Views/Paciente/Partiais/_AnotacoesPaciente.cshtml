@@ -8,7 +8,7 @@
             @foreach (var obs in Model.Anotacoes.OrderByDescending(d=>d.DataObservacao))
             {
                 <div class="col-12 ">
-                    <p class="bg-secondary text-light mb-0 ps-1">Data: @obs.DataObservacao</p>
+                    <p class="bg-secondary text-light mb-0 ps-1">Data: @obs?.DataObservacao.ToShortDateString()</p>
                     <textarea readonly class="form-control" style="height:330px">@obs.Obs?.Replace("<br/>", "\n")</textarea>
                 </div>
                 <div class="col-12">

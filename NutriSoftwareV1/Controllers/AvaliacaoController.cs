@@ -29,16 +29,22 @@ namespace NutriSoftwareV1.Controllers
 
             using (NutriDbContext db = new NutriDbContext())
             {
-                var avaliacoes = db.AvaliacoesFisicas.Include(p => p.Paciente).Where(p => p.PacienteId == Id).OrderBy(p => p.DataAvaliacao).ToList();
-                dtoCadastroAvaliacaoFisica.UltimaAvalicao = avaliacoes.LastOrDefault();
-                dtoCadastroAvaliacaoFisica.NumeroAvaliacao = avaliacoes.Count() + 1;
+                var avaliacoes = db.AvaliacoesFisicas?.Include(p => p.Paciente)?.Where(p => p.PacienteId == Id)?.OrderBy(p => p.Consulta);
+
                 if (AvaliacoaId.HasValue)
                 {
+                   
                     dtoCadastroAvaliacaoFisica.TituloCadastarEditar = "Editar Avaliação";
                     dtoCadastroAvaliacaoFisica.CriarAtulizar = db.AvaliacoesFisicas.Find(AvaliacoaId.Value);
+                    var avaliacaoAnterior = dtoCadastroAvaliacaoFisica.CriarAtulizar.Consulta - 1;
                     dtoCadastroAvaliacaoFisica.NumeroAvaliacao = dtoCadastroAvaliacaoFisica.CriarAtulizar.Consulta;
                     dtoCadastroAvaliacaoFisica.Data = dtoCadastroAvaliacaoFisica.CriarAtulizar.DataAvaliacao;
+                    dtoCadastroAvaliacaoFisica.UltimaAvalicao = db.AvaliacoesFisicas?.Include(p => p.Paciente)?.FirstOrDefault(p => p.Consulta == avaliacaoAnterior);
+                    return PartialView("Partiais/_FormularioAvaliacao", dtoCadastroAvaliacaoFisica);
                 }
+               
+                dtoCadastroAvaliacaoFisica.UltimaAvalicao = avaliacoes?.LastOrDefault();
+                dtoCadastroAvaliacaoFisica.NumeroAvaliacao = avaliacoes.Count() + 1;
             }
             return PartialView("Partiais/_FormularioAvaliacao", dtoCadastroAvaliacaoFisica);
 
