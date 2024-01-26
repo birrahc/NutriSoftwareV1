@@ -64,7 +64,7 @@
                     <h4 class="h3-indice">C.Cintura</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="C_Cintura" mask=medidas value="@Model?.CriarAtulizar?.C_Cintura?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="C_Cintura" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.C_Cintura?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_Cintura" />
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
                     <h4 class="h3-indice">C.Abdominal</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="C_Abdominal" mask=medidas value="@Model?.CriarAtulizar?.C_Abdominal?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="C_Abdominal" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.C_Abdominal?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_Abdominal"/>
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
                     <h4 class="h3-indice">C.Quadril</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="C_Quadril" mask=medidas value="@Model?.CriarAtulizar?.C_Quadril?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="C_Quadril" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.C_Quadril?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_Quadril"/>
                 </div>
             </div>
 
@@ -100,7 +100,7 @@
                     <h4 class="h3-indice">C.Peito</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="C_Peito" mask=medidas value="@Model?.CriarAtulizar?.C_Peito?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="C_Peito" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.C_Peito?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_Peito"/>
                 </div>
             </div>
 
@@ -112,7 +112,7 @@
                     <h4 class="h3-indice">C.Braço D</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="C_Braco_D" mask=medidas value="@Model?.CriarAtulizar?.C_Braco_D?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="C_Braco_D" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.C_Braco_D?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_BracoD"/>
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
                     <h4 class="h3-indice">C.Braço E</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="C_Braco_E" mask=medidas value="@Model?.CriarAtulizar?.C_Braco_E?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="C_Braco_E" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.C_Braco_E?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_BracoE"/>
                 </div>
             </div>
 
@@ -136,7 +136,7 @@
                     <h4 class="h3-indice">C.Coxa D</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="C_Coxa_D" mask=medidas value="@Model?.CriarAtulizar?.C_Coxa_D?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="C_Coxa_D" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.C_Coxa_D?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_CoxaD"/>
                 </div>
             </div>
 
@@ -148,7 +148,7 @@
                     <h4 class="h3-indice">C.Coxa E</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="C_Coxa_E" mask=medidas value="@Model?.CriarAtulizar?.C_Coxa_E?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="C_Coxa_E" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.C_Coxa_E?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_CoxaE"/>
                 </div>
             </div>
 
@@ -160,7 +160,7 @@
                     <h4 class="h3-indice">Panturrilha D</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Panturrilha_D" mask=medidas value="@Model?.CriarAtulizar?.Panturrilha_D?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Panturrilha_D" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Panturrilha_D?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_PanturrilhaD"/>
                 </div>
             </div>
 
@@ -172,7 +172,7 @@
                     <h4 class="h3-indice">Panturrilha E</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Panturrilha_E" mask=medidas value="@Model?.CriarAtulizar?.Panturrilha_E?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Panturrilha_E" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Panturrilha_E?.ToString("N2")" class="form-control form-control-sm text-center" id="txtC_PanturrilhaE"/>
                 </div>
             </div>
 
@@ -190,7 +190,7 @@
                     <h4 class="h3-indice">DC.Triceps</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Dc_Triceps" mask=medidas value="@Model?.CriarAtulizar?.Dc_Triceps?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Dc_Triceps" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Dc_Triceps?.ToString("N2")" class="form-control form-control-sm text-center" id="txtDc_Triceps"/>
                 </div>
             </div>
 
@@ -202,7 +202,7 @@
                     <h4 class="h3-indice">DC.Escapular</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Dc_Escapular" mask=medidas value="@Model?.CriarAtulizar?.Dc_Escapular?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Dc_Escapular" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Dc_Escapular?.ToString("N2")" class="form-control form-control-sm text-center" id="txtDc_Escapular"/>
                 </div>
             </div>
 
@@ -214,7 +214,7 @@
                     <h4 class="h3-indice">DC.Supra Iliaca</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Dc_Supra_Iliaca" mask=medidas value="@Model?.CriarAtulizar?.Dc_Supra_Iliaca?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Dc_Supra_Iliaca" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Dc_Supra_Iliaca?.ToString("N2")" class="form-control form-control-sm text-center" id="txtDc_Supra_Iliaca"/>
                 </div>
             </div>
 
@@ -226,7 +226,7 @@
                     <h4 class="h3-indice">DC.Abdominal</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Dc_Abdominal" mask=medidas value="@Model?.CriarAtulizar?.Dc_Abdominal?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Dc_Abdominal" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Dc_Abdominal?.ToString("N2")" class="form-control form-control-sm text-center" id="txtDc_Abdominal" />
                 </div>
             </div>
 
@@ -238,7 +238,7 @@
                     <h4 class="h3-indice">DC.Axilar</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Dc_Axilar" mask=medidas value="@Model?.CriarAtulizar?.Dc_Axilar?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Dc_Axilar" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Dc_Axilar?.ToString("N2")" class="form-control form-control-sm text-center" id="txtDc_Axilar"/>
                 </div>
             </div>
 
@@ -250,7 +250,7 @@
                     <h4 class="h3-indice">DC.Peitoral</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Dc_Peitoral" mask=medidas value="@Model?.CriarAtulizar?.Dc_Peitoral?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Dc_Peitoral" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Dc_Peitoral?.ToString("N2")" class="form-control form-control-sm text-center" id="txtDc_Peitoral"/>
                 </div>
             </div>
 
@@ -262,7 +262,7 @@
                     <h4 class="h3-indice">DC.Coxa</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="Dc_coxa" mask=medidas value="@Model?.CriarAtulizar?.Dc_coxa?.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="Dc_coxa" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.Dc_coxa?.ToString("N2")" class="form-control form-control-sm text-center" id="txtDC_Coxa"/>
                 </div>
             </div>
 
@@ -274,7 +274,7 @@
                     <h4 class="h3-indice">% Gordura</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" value="@Model?.CriarAtulizar?.PercentualGordura?.ToString("N2")" readonly class="form-control form-control-sm text-center" />
+                    <input type="text" value="@Model?.CriarAtulizar?.PercentualGordura?.ToString("N2")" readonly class="form-control form-control-sm text-center"/>
                 </div>
             </div>
 

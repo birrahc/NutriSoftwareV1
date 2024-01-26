@@ -51,7 +51,7 @@
                     <h4 class="h3-indice">IMC</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="IMC" mask=medidas value="@Model?.CriarAtulizar?.IMC.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="IMC" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.IMC.ToString("N2")" class="form-control form-control-sm text-center" id="txtIMC"/>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                     <h4 class="h3-indice">% Gordura corporal</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="PercentualGorduraCorporal" mask=medidas value="@Model?.CriarAtulizar?.PercentualGorduraCorporal.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="PercentualGorduraCorporal" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.PercentualGorduraCorporal.ToString("N2")" class="form-control form-control-sm text-center" id="txtPercentualGordura"/>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
                     <h4 class="h3-indice">% Músc. Esquelético</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="PercentualMusculoEsqueletico" mask=medidas value="@Model?.CriarAtulizar?.PercentualMusculoEsqueletico.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="PercentualMusculoEsqueletico" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.PercentualMusculoEsqueletico.ToString("N2")" class="form-control form-control-sm text-center" id="txtPercentualMusculoEsqueletico"/>
                 </div>
             </div>
 
@@ -87,7 +87,7 @@
                     <h4 class="h3-indice">Metabolismo basal</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="MetaBolismoBasal" mask=medidas value="@Model?.CriarAtulizar?.MetaBolismoBasal.ToString("N2")" class="form-control form-control-sm text-center" />
+                    <input type="text" name="MetaBolismoBasal" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.MetaBolismoBasal.ToString("N2")" class="form-control form-control-sm text-center" id="txtMetabolismoBasal"/>
                 </div>
             </div>
 
@@ -99,7 +99,7 @@
                     <h4 class="h3-indice">Idade corporal</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="IdadeCorporal" mask=medidas value="@Model?.CriarAtulizar?.IdadeCorporal" class="form-control form-control-sm text-center" />
+                    <input type="text" name="IdadeCorporal" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.IdadeCorporal" class="form-control form-control-sm text-center" id="txtIdadeCorporal"/>
                 </div>
             </div>
 
@@ -111,7 +111,7 @@
                     <h4 class="h3-indice">Gordura viceral</h4>
                 </div>
                 <div class="col-4 d-inline-block">
-                    <input type="text" name="GorduraViceral" mask=medidas value="@Model?.CriarAtulizar?.GorduraViceral" class="form-control form-control-sm text-center" />
+                    <input type="text" name="GorduraViceral" oninput="TextNumericDecimal(this.id,2)" value="@Model?.CriarAtulizar?.GorduraViceral" class="form-control form-control-sm text-center" id="txtGorduraViceral"/>
                 </div>
             </div>
 

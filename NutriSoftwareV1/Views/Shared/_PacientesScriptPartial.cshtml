@@ -3,33 +3,60 @@
     $(document).ready(function () { 
         $('span[mask="cpf"]').mask('000.000.000-00', { reverse: true });
     })
+
+    function AbrirModalCadastarEditarPaciente_OnClick(id) {
+        AbrirFormularioEditar('@Url.Action("CadastrarEditarPaciente", "Paciente")', id, 'pnlFormularioCadastroPaciente', 'modalCadastrarEditarPaciente')
+    }
+
     function CadastarPaciente_OnClick() {
-        CadastrarEditar('@Url.Action("Create", "Paciente")', 'frmCadastraPaciente', 'pnlDetalhesPaciente', 'modalRegisterForm', 'Paciente cadastrado com sucesso.');
+        CadastrarEditar('@Url.Action("Create", "Paciente")', 'frmCadastraPaciente', 'pnlDetalhesPaciente', 'modalCadastrarEditarPaciente', 'Paciente cadastrado com sucesso.');
     }
 
     function EditarPaciente_OnClick() {
-        CadastrarEditar('@Url.Action("Edit", "Paciente")', 'frmEditarPaciente', 'pnlDetalhesPaciente', 'modalEditForm', 'Dados do paciente alterados com sucesso.');
+        CadastrarEditar('@Url.Action("Edit", "Paciente")', 'frmEditarPaciente', 'pnlDetalhesPaciente', 'modalCadastrarEditarPaciente', 'Dados do paciente alterados com sucesso.');
     }
 
     function RemoverPaciente_OnClick(id) {
         Deletar('@Url.Action("Delete", "Paciente")', id, 'pnlGeralPaciente', 'Paciente removido com sucesso.', 'Você tem certeza que deseja remover este paciente?')
     }
 
+    function AnotacoesPaciente_OnClick(id) {
+        $.get('@Url.Action("ObservacoesPaciente","Paciente")', { Id:id }, function (data) {
+            // Manipular os dados de resposta (data) aqui
+            
+        }).done(function (data) {
+            $("#pnlAnotacoesPaciente").html(data);
+            $("#pnlBlocoObservacao").show();
+            }).fail(function (error) {
+                console.error('Erro na requisição:', error);
+            });
+
+    }
+
+    function AbrirModalCadastroAnotacao_OnClick(id) 
+    {
+        AbrirFormularioEditar('@Url.Action("CadastrarAnotacaoPaciente", "Paciente")', id, 'pnlformModal', 'modalCadastrarEditarObsPaciente')
+    }
+
     function CadastrarAnotacao_OnClick() {
         CadastrarEditar('@Url.Action("CadastrarAnotacaoPaciente", "Paciente")', 'frmCadastrarAnotacao', 'pnlAnotacoesPaciente', 'modalRegisterObs', 'Anotação cadastrada com sucesso.');
     }
     function AbrirModalEditarAnotacoes_OnClick(id) {
-        AbrirFormularioEditar('@Url.Action("EditarAnotacaoPaciente", "Paciente")', id, 'pnlformModal', 'modalEditObs');
+        AbrirFormularioEditar('@Url.Action("EditarAnotacaoPaciente", "Paciente")', id, 'pnlformModal', 'modalCadastrarEditarObsPaciente');
     }
 
-    function EditarAnotacaoPaciente_OnClick() {
-        let form = $('form[name="frmEditarObs"]');
+    function CadastrarEditarAnotacaoPaciente_OnClick() {
+        let form = $('form[name="frmCadastrarEditarAnotacao"]');
         let id = convertFormToJSON(form).Id;
-        let mensagemSucesso = "Anotações cadastradas com sucesso."
+
+        console.log(id)
+
         if (id > 0) {
-            mensagemSucesso = "Anotações alteradas com sucesso."
+            CadastrarEditar('@Url.Action("EditarAnotacaoPaciente", "Paciente")', 'frmCadastrarEditarAnotacao', 'pnlAnotacoesPaciente', 'modalCadastrarEditarObsPaciente', "Anotações cadastradas com sucesso.");
         }
-        CadastrarEditar('@Url.Action("EditarAnotacaoPaciente", "Paciente")', 'frmEditarObs', 'pnlAnotacoesPaciente', 'modalEditObs', mensagemSucesso);
+        else {
+            CadastrarEditar('@Url.Action("CadastrarAnotacaoPaciente", "Paciente")', 'frmCadastrarEditarAnotacao', 'pnlAnotacoesPaciente', 'modalCadastrarEditarObsPaciente', 'Anotação cadastrada com sucesso.');
+        }
     }
 
     function RemoverAnotacao_OnClick(id) {
@@ -68,5 +95,7 @@
     }
     function DetalhesPaciente_OnClick(url) {
         Detalhes(url, 'pnlDetalhesPaciente');
+        $("#pnlBlocoObservacao").hide();
+        console.log("Teste")
     }
 </script>

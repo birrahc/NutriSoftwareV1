@@ -1,0 +1,81 @@
+﻿@model Paciente
+@{
+    string nomeBotao = Model?.Id > 0 ? "Salvar alterações" : "Salvar";
+    string TituloModal = Model?.Id > 0 ? "Editar informações do paciente" : "Cadastro de Paciente";
+}
+<form name="frmEditarPaciente" method="POST">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">@TituloModal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <input type="hidden" name="Id" value="@Model?.Id" />
+        <div class="row">
+            <div class="col-12">
+                <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="nome">Nome</label>
+                <input type="text" name="Nome" value="@Model?.Nome" id="nome" class="form-control form-control-sm w-100">
+            </div>
+        </div>
+        @{
+            string checkedMasculino = Model?.Sexo == EN_Sexo.Masculino ? "checked" : "";
+            string checkedFeminino = Model?.Sexo == EN_Sexo.Feminino ? "checked" : "";
+        }
+        <div class="row">
+            <div class="col-10 d-inline-block">
+                <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="sexo">Sexo</label><br>
+                <div class="d-inline-block w-49">
+                    <span class="d-inline-block">Masculino</span>
+                    <input name="Sexo" type="radio" value="1" id="sexo" class="form-check d-inline-block ms-2" @checkedMasculino>
+                </div>
+                <div class="d-inline-block w-49">
+                    <span class="d-inline-block">Feminino</span>
+                    <input name="Sexo" type="radio" value="2" id="sexo" class="form-check d-inline-block ms-2" @checkedFeminino>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-8 d-inline-block">
+                <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="nascimento">Nascimento</label>
+                <input type="date" name="DataNascimento" value="@Model?.DataNascimento?.ToString("yyyy-MM-dd")" id="" class="form-control form-control-sm w-100">
+            </div>
+            <div class="col-4 d-lg-inline-block">
+                <label class="m-0 fs-10" data-error="wrong" data-success="right" for="altura">Altura</label>
+                <input type="text" name="Altura" value="@Model?.Altura" id="altura" class="form-control form-control-sm w-100">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5 d-lg-inline-block">
+                <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="cpf">CPF</label>
+                <input type="text" name="Cpf" value="@Model?.Cpf" mask="cpf" id="cpf" class="form-control form-control-sm w-100">
+            </div>
+            <div class="col-7">
+                <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Profissão</label>
+                <input type="text" name="Profissao" value="@Model?.Profissao" id="orangeForm-pass" class="form-control form-control-sm w-100">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Telefone</label>
+                <input type="text" name="Telefone" value="@Model?.Telefone" id="orangeForm-pass" class="form-control form-control-sm">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="email">E-Mail</label>
+                <input type="email" name="Email" value="@Model?.Email" id="email" class="form-control form-control-sm" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" onclick="EditarPaciente_OnClick()" class="btn btn-primary">@nomeBotao</button>
+    </div>
+</form>

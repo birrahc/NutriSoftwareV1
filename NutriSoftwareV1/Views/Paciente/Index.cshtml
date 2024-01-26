@@ -5,177 +5,30 @@
 }
 
 <div class="container" style="margin-top: 70px;" id="pnlGeralPaciente">
-    <partial name="Partiais/_GeralPaciente" for="@Model"/>
+    <partial name="Partiais/_GeralPaciente" for="@Model" />
 </div>
 
-<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Cadastro de Paciente</h4>
-            </div>
-            <form name="frmCadastraPaciente" method="post">
-                <div class="modal-body mx-3 m-0">
-                    <div class="md-form">
-                        <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="nome">Nome</label>
-                        <input type="text" name="Nome" id="nome" class="form-control">
 
-                    </div>
-
-                    <div class="md-form mb-1 w-45 d-inline-block">
-                        <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="sexo">Sexo</label><br>
-                        <span>Masculino</span><input name="Sexo" type="radio" value="1" id="sexo" class="ml-2">
-                        <span>Feminino</span><input name="Sexo" type="radio" value="2" id="sexo" class="ml-2">
-                    </div>
-
-                    <div class="md-form mb-1 w-45 d-inline-block ml-39">
-                        <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="nascimento">Nascimento</label>
-                        <input type="date" name="DataNascimento" id="" class="form-control">
-
-                    </div>
-
-                    <div class="md-form mb-1 w-20 d-inline-block">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="altura">Altura</label>
-                        <input type="text" name="Altura" id="altura" class="form-control">
-
-                    </div>
-                    <div class="md-form mb-1 w-45 d-inline-block" style="margin-left:146px;">
-                        <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="cpf">CPF</label>
-                        <input type="text" name="Cpf" mask="cpf" id="cpf" class="form-control">
-                    </div>
-                    <div class="md-form mb-1 d-block">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Profissão</label>
-                        <input type="text" name="Profissao" id="orangeForm-pass" class="form-control">
-                    </div>
-                    <div class="md-form mb-1 d-block">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Telefone</label>
-                        <input type="text" name="Telefone" id="orangeForm-pass" class="form-control">
-                    </div>
-                    <div class="md-form mb-1 d-block">
-                        <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="email">E-Mail</label>
-                        <input type="email" name="Email" id="email" class="form-control">
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" onclick="CadastarPaciente_OnClick()" class="btn btn-primary">Cadastrar</button>
-                </div>
-            </form>
+<!-- Modal -->
+<div class="modal fade" id="modalCadastrarEditarPaciente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="pnlFormularioCadastroPaciente">
+          @* Carregamento via jquery *@
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="modalEditForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Editar Paciente</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form name="frmEditarPaciente" method="POST">
-                <input type="hidden" name="Id" value="@DetalhePaciente?.Id" />
-                <div class="modal-body mx-3 m-0">
-                    <div class="md-form">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-name">Nome</label>
-                        <input type="text" name="Nome" value="@DetalhePaciente?.Nome" id="orangeForm-name" class="form-control validate">
-                    </div>
-                    @{
-                        string checkedMasculino = DetalhePaciente?.Sexo == EN_Sexo.Masculino ? "checked" : "";
-                        string checkedFeminino = DetalhePaciente?.Sexo == EN_Sexo.Feminino ? "checked" : "";
-                    }
 
-
-                    <div class="md-form mb-1 w-45 d-inline-block">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-email">Sexo</label><br>
-                        <span>Masculino</span><input name="Sexo" type="radio" value="1" @checkedMasculino id="orangeForm-email" class="ml-2">
-                        <span>Feminino</span><input name="Sexo" type="radio" value="2" @checkedFeminino id="orangeForm-email" class="ml-2">
-                    </div>
-
-                    <div class="md-form mb-1 w-45 d-inline-block ml-39">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Nascimento</label>
-                        <input type="date" name="DataNascimento" value="@DetalhePaciente?.DataNascimento?.ToString("yyyy-MM-dd")" id="orangeForm-pass" class="form-control validate">
-                    </div>
-
-                    <div class="md-form mb-1 w-20 d-inline-block">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Altura</label>
-                        <input type="text" name="Altura" value="@DetalhePaciente?.Altura" id="orangeForm-pass" class="form-control validate">
-                    </div>
-                    <div class="md-form mb-1 w-45 d-inline-block" style="margin-left:146px;">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-name">CPF</label>
-                        <input type="text" name="Cpf" mask="cpf" value="@DetalhePaciente?.Cpf" id="cpf" class="form-control validate">
-                    </div>
-                    <div class="md-form mb-1">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Profissão</label>
-                        <input type="text" name="Profissao" value="@DetalhePaciente?.Profissao" id="orangeForm-pass" class="form-control validate">
-                    </div>
-                    <div class="md-form mb-1">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">Telefone</label>
-                        <input type="text" name="Telefone" value="@DetalhePaciente?.Telefone" id="orangeForm-pass" class="form-control validate">
-                    </div>
-                    <div class="md-form mb-1">
-                        <label class="m-0 fs-10" data-error="wrong" data-success="right" for="orangeForm-pass">E-Mail</label>
-                        <input type="email" name="Email" value="@DetalhePaciente?.Email" id="orangeForm-pass" class="form-control validate">
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" onclick="EditarPaciente_OnClick()" class="btn btn-primary">Editar</button>
-                </div>
-            </form>
+<!-- Modal -->
+<div class="modal fade" id="modalCadastrarEditarObsPaciente" tabindex="-1" aria-labelledby="modalCadastrarEditarObsPacienteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="pnlformModal">
+            @* carregamento via jquery *@
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="modalRegisterObs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Registro de Observação</h4>
 
-            </div>
-            <form name="frmCadastrarAnotacao" method="POST">
-                <div class="modal-body mx-3 m-0">
-                    <div class="md-form">
-
-                        <h5 class="text-center">@DetalhePaciente?.Nome</h5>
-                        <input id="paciente_obs" type="hidden" name="PacienteId" value="@DetalhePaciente?.Id" />
-                    </div>
-
-                    <div class="md-form">
-                        <input type="date" name="DataObservacao" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="margin-left: 67%; border: 0;" />
-                    </div>
-
-                    <div class="md-form mb-1 w-45 d-inline-block ml-39">
-                        <label class="m-0 fs-10 error" data-error="wrong" data-success="right" for="nascimento">Descrição</label>
-                        <textarea id="obs_paciente" style="resize: none; width: 185%; height: 270px;" name="Obs" id="obsGeral" class="form-control validate align-content-md-start">
-
-                            </textarea>
-                    </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" onclick="CadastrarAnotacao_OnClick()" class="btn btn-primary">Cadastrar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="modalEditObs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Editar Observação</h4>
-            </div>
-            <div id="pnlformModal">
-                @* carregamento via jquery *@
-            </div>
-        </div>
-    </div>
-</div>
 
 
 @section Scripts {
